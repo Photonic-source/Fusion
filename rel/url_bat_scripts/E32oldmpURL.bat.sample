@@ -1,0 +1,11 @@
+
+::Register another app similar to Fusion URL REG ADD.bat
+::        SET "dir=%~dp0"
+::        REG ADD HKcr\Fusion /V "URL Protocol"
+::        REG ADD HKcr\Fusion\shell\open\command /D "\"%dir%fusion.exe\" %%1"
+::                                                            ^^^<-replace the exe with this URL parser
+::This script will pass URL arguments to it with proper spaces
+::This does not register URL %20 encoding for space, use + encoding instead
+::Eg, {YourApp}:-map+e3l6+-net+n0:3
+
+FOR /F "TOKENS=2-27 DELIMS=:+" %%A IN ("%~1") DO (%~dp0"eduke32_oldmp.exe" %%A %%B %%C %%D %%E %%F %%G %%H %%I %%J %%K %%L %%M %%N %%O %%P %%Q %%R %%S %%T %%U %%V %%W %%X %%Y %%Z)
