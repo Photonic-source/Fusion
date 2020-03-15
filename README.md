@@ -22,7 +22,7 @@ This takes most of the legwork away from new users and lets hosts send links to 
 
 
 Instructions.
-1. Download and run installer from github
+1. Download and run installer from https://github.com/Photonic-source/Fusion/tree/master/bin
 
 2. Run game once in single player and setup your preferences
 
