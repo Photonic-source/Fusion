@@ -8,7 +8,10 @@ A 32bit OpenGL port of Duke Nukem 3d focusing on peer to peer network stability 
 Fusion brings Duke3D Multiplayer to everybody. With a simple to use installer and URL protocol launching, you are just clicks away from a Dukematch with your friends over the internet or LAN.
 
 
-To launch Fusion from your browser it's "fusion:-dir full -host 2" to host a 2 player multiplayer game. Then "fusion:-dir full -join [HOST IP ADDRESS]"
+To launch Fusion from your browser it's "fusion:-dir full -host 2" to host a 2 player multiplayer game. 
+
+Then "fusion:-dir full -join [HOST IP ADDRESS]"
+
 eg. Here I've been playing a lot of LAN while testing.
 
 player1 "fusion:-dir share -host 2"
@@ -25,7 +28,7 @@ Instructions.
 
 3. Click a link or make a shortcut and play.
 
-*) Port-forwarding required to host games.
+  *) Port-forwarding required to host games.
 
-*) fusion.exe needs to be allowed past your firewall
+  *) fusion.exe needs to be allowed past your firewall
 
