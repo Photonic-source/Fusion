@@ -1,0 +1,15 @@
+Changelog:
+Restructed codebase
+Removed Polymer
+Removed hightiles/def files
+Removed software renderer
+Forced 4:3 resolutions
+Added URL parsing
+Disabled texture cache
+Removed renderer options
+Disabled models
+Network fixes
+Removed mmulti_unstable
+Added g_networkConnectMode
+Added -host/-join argument
+Added -f# packetrate modes
