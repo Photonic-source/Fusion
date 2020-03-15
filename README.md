@@ -18,7 +18,7 @@ player1 "fusion:-dir share -host 2"
 
 player2 "fusion:-dir share -join 196.168.0.10"
 
-This take most of the legwork away from new users and lets hosts send links their friends who can then just click to play. No thirdparty software or server needed. With that said this port is ready and waiting for a website to host chats and generate some buttons to start matches.
+This takes most of the legwork away from new users and lets hosts send links to their friends who can then just click to play. No thirdparty software or server needed. With that said this port is ready and waiting for a website to host chats and generate some buttons to start matches.
 
 
 Instructions.
