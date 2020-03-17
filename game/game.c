@@ -9275,7 +9275,7 @@ static void G_CheckCommandLine(int argc, const char **argv)
                     i++;
                     continue;
                 }
-                if (!Bstrcasecmp(c+1,"dir"))
+                if (!Bstrcasecmp(c+1,"game_dir") || !Bstrcasecmp(c+1,"dir"))
                 {
                     if (argc > i+1)
                     {
