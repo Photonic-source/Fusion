@@ -28,7 +28,7 @@ Instructions.
 
 3. Click a link or make a shortcut and play.
 
-  *) Port-forwarding required to host games.
+  *) Port-forwarding required to host games over the internet.
 
-  *) fusion.exe needs to be allowed past your firewall
+  *) fusion.exe needs to be allowed past windows firewall.
 
