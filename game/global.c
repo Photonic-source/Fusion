@@ -23,7 +23,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 //-------------------------------------------------------------------------
 #include "duke3d.h"
 
-const char *s_buildDate = "20200316";
+const char *s_buildDate = "20200327";
 char *MusicPtr = NULL;
 int g_musicSize;
 
@@ -87,7 +87,7 @@ int g_timerTicsPerSecond=TICRATE;
 
 sound_t g_sounds[ MAXSOUNDS ];
 
-char g_numPlayerSprites,g_loadFromGroupOnly=1,g_earthquakeTime;
+char g_numPlayerSprites,g_loadFromGroupOnly=0,g_earthquakeTime;
 
 int fricxv,fricyv;
 playerdata_t g_player[MAXPLAYERS];
