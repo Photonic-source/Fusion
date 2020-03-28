@@ -112,7 +112,7 @@ char *duke3dgrp = defaultduke3dgrp;
 char *duke3dgrpstring = NULL;
 static char defaultconfilename[BMAX_PATH] = {"fusion.c"};
 static char *confilename = defaultconfilename;
-char *duke3ddef = "";
+char *duke3ddef = "fusion.def";
 char mod_dir[BMAX_PATH] = "/";
 #if defined(POLYMOST)
 // extern char TEXCACHEFILE[BMAX_PATH];
@@ -8926,7 +8926,7 @@ static int AL_DefineSound(int ID,char *name)
         return 1;
     g_sounds[ID].filename1=makename(g_sounds[ID].filename1,name,g_sounds[ID].filename);
 //    initprintf("(%s)(%s)(%s)\n",g_sounds[ID].filename1,name,g_sounds[ID].filename);
-//    S_LoadSound(ID);
+    S_LoadSound(ID);
     return 0;
 }
 
@@ -8964,7 +8964,7 @@ static int AL_DefineMusic(char *ID,char *name)
     MapInfo[sel].alt_musicfn=makename(MapInfo[sel].alt_musicfn,name,ID);
 //    initprintf("%-15s | ",ID);
 //    initprintf("%3d %2d %2d | %s\n",sel,ep,lev,MapInfo[sel].alt_musicfn);
-//    S_PlayMusic(ID,sel);
+    S_PlayMusic(ID,sel);
     return 0;
 }
 
@@ -11108,12 +11108,12 @@ CLEAN_DIRECTORY:
     }
 
     if (quitevent) return;
-    // if (!loaddefinitionsfile(duke3ddef))
-    // {
-    //     initprintf("Definitions file '%s' loaded.\n",duke3ddef);
-    //     loaddefinitions_game(duke3ddef, FALSE);
-    // }
-    //     initprintf("numplayers=%i\n",numplayers);
+    if (!loaddefinitionsfile(duke3ddef))
+    {
+        initprintf("Definitions file '%s' loaded.\n",duke3ddef);
+        loaddefinitions_game(duke3ddef, FALSE);
+    }
+        initprintf("numplayers=%i\n",numplayers);
 
     Net_SendVersion();
     Net_SendPlayerName();
