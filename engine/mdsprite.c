@@ -763,13 +763,7 @@ int mdloadskin(md2model *m, int number, int pal, int surf)
             //OSD_Printf("Using def skin 0,0 as fallback, pal=%d\n", pal);
         }
         else
-        {
-            if ((unsigned)number >= (unsigned)m->numskins) number = 0;
-            skinfile = m->skinfn + number*64;
-            texidx = &m->texid[ number * (HICEFFECTMASK+1) + (globalnoeffect)?0:(hictinting[pal].f&HICEFFECTMASK)];
-            strcpy(fn,m->basepath); strcat(fn,skinfile);
-            //OSD_Printf("Using MD2/MD3 skin (%d) %s, pal=%d\n",number,skinfile,pal);
-        }
+            return 0;
     }
     skhead=sk; // for palmaps
     if (!skinfile[0]) return 0;
@@ -2735,7 +2729,7 @@ voxmodel *voxload(const char *filnam)
     if (vm)
     {
         vm->mdnum = 1; //VOXel model id
-        vm->scale = vm->bscale = 1.0;
+        vm->scale = vm->bscale = 1.5;
         vm->xsiz = xsiz; vm->ysiz = ysiz; vm->zsiz = zsiz;
         vm->xpiv = xpiv; vm->ypiv = ypiv; vm->zpiv = zpiv;
         vm->is8bit = is8bit;
