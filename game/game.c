@@ -3959,8 +3959,8 @@ static void G_DoThirdPerson(DukePlayer_t *pp, int *vx, int *vy,int *vz,short *vs
 {
     spritetype *sp = &sprite[pp->i];
     int i, hx, hy, hitx, hity, hitz;
-    int nx = (sintable[(ang+1536)&2047]>>4);
-    int ny = (sintable[(ang+1024)&2047]>>4);
+    int nx = (sintable[(ang+1536)&2047]>>3); // >>4);
+    int ny = (sintable[(ang+1024)&2047]>>3); // >>4);
     int nz = (horiz-100)*128;
     short hitsect, hitwall, hitsprite, daang;
     short bakcstat = sp->cstat;
@@ -4003,7 +4003,7 @@ static void G_DoThirdPerson(DukePlayer_t *pp, int *vx, int *vy,int *vz,short *vs
     *vy = (*vy)+mulscale16(ny,g_cameraDistance);
     *vz = (*vz)+mulscale16(nz,g_cameraDistance);
 
-    g_cameraDistance = min(g_cameraDistance+((totalclock-g_cameraClock)<<10),65536);
+    g_cameraDistance = min(g_cameraDistance+((totalclock-g_cameraClock)<<10),81920); // 65536);
     g_cameraClock = totalclock;
 
     updatesectorz(*vx,*vy,*vz,vsectnum);
@@ -10765,7 +10765,8 @@ void app_main(int argc,const char **argv)
                    "Would you like to enable the on-disk texture cache?\n\n"
                    "You will generally want to say 'yes' here, especially if using the HRP.");
         if (i) ud.config.useprecache = glusetexcompr = glusetexcache = glusetexcachecompression = 1;
-        else */ glusetexcache = glusetexcachecompression = 0;
+        else glusetexcache = glusetexcachecompression = 0; */ 
+		ud.config.useprecache = glusetexcompr = glusetexcache = glusetexcachecompression = 1;
     }
 #endif
 
